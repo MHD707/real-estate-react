@@ -202,30 +202,22 @@ const HeroSection = () => {
           >
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
-                centeredSlides           
-                loop                     
+                loop={true}
+                centeredSlides={true}
+                grabCursor={true}
+                slidesPerView={1.5}
                 spaceBetween={30}
-                grabCursor               
-                slidesPerView={1}
                 autoplay={{ delay: 5000, disableOnInteraction: false }}
                 navigation
                 pagination={{ clickable: true, dynamicBullets: true }}
-                effect="coverflow"
-                coverflowEffect={{
-                    rotate: 5,
-                    stretch: 0,
-                    depth: 100,            
-                    modifier: 2,
-                    slideShadows: true,
-                }}
-                breakpoints={{           
+                breakpoints={{
                     640:  { slidesPerView: 1.2 },
                     768:  { slidesPerView: 1.5 },
                     1024: { slidesPerView: 2 },
                     1280: { slidesPerView: 2.5 },
                 }}
                 className="mySwiper"
-            >
+            >   
 
               <SwiperSlide>
                 <div className="bg-gradient-to-br from-red-400 to-pink-500 rounded-xl p-8 transition-all duration-300 hover:scale-105 h-64 flex flex-col justify-between">

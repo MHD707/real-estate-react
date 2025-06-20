@@ -1,10 +1,31 @@
+/* index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* index.css */
-.swiper-slide            { transition: all .35s ease; opacity:.4; filter:blur(3px)    saturate(.8); transform:scale(.80) }
+/* --- Swiper Blur & Scale Effect --- */
+.swiper-slide {
+  transition: all 0.5s ease;
+  opacity: 0.3;
+  filter: blur(3px) saturate(0.8);
+  transform: scale(0.85);
+  pointer-events: none;
+}
+
 .swiper-slide-prev,
-.swiper-slide-next       { opacity:.7;  filter:blur(1.5px) saturate(.9); transform:scale(.90) }
-.swiper-slide-active     { opacity:1;   filter:none;                        transform:scale(1.05) }
-.swiper-slide-shadow     { display:none }           /* supprime les ombres par défaut du coverflow */
+.swiper-slide-next {
+  opacity: 0.75;
+  filter: blur(1.5px) saturate(0.95);
+  transform: scale(0.95);
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  filter: none;
+  transform: scale(1.05);
+  pointer-events: auto;
+}
+
+.swiper-slide-shadow {
+  display: none;
+}
