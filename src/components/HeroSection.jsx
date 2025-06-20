@@ -8,10 +8,10 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 // Logos des partenaires
-import AirbnbLogo from '../assets/airbnb.png';
-import CiscoLogo from '../assets/cisco.png';
-import EbayLogo from '../assets/ebay.png';
-import MicrosoftLogo from '../assets/microsoft.png';
+import AirbnbLogo from '../assets/airbnb.svg';
+import CiscoLogo from '../assets/cisco.svg';
+import EbayLogo from '../assets/ebay.svg';
+import MicrosoftLogo from '../assets/microsoft.svg';
 
 // Image de propriété exemple
 import PropertyImage from '../assets/property.jpg';
@@ -80,10 +80,10 @@ const HeroSection = () => {
         
         <div className="hidden md:flex items-center space-x-8">
           <a href="#" className="text-white border-b-2 border-pink-500 pb-1">Home</a>
-          <a href="#" className="text-gray-300 hover:text-white transition-colors">Properties</a>
+          {/* <a href="#" className="text-gray-300 hover:text-white transition-colors">Properties</a>
           <a href="#" className="text-gray-300 hover:text-white transition-colors">Members</a>
           <a href="#" className="text-gray-300 hover:text-white transition-colors">Pages</a>
-          <a href="#" className="text-gray-300 hover:text-white transition-colors">Blogs</a>
+          <a href="#" className="text-gray-300 hover:text-white transition-colors">Blogs</a> */}
         </div>
         
         <div className="flex items-center space-x-4">
@@ -193,115 +193,130 @@ const HeroSection = () => {
         
         {/* Côté droit */}
         <div className="relative h-full">
-          {/* Carte de service spécial */}
+          {/* Carrousel pour les cartes de service */}
           <motion.div 
-            className="absolute top-0 left-0 md:left-12 w-64 bg-gradient-to-br from-red-400 to-pink-500 rounded-xl p-6 shadow-xl z-20"
+            className="absolute top-1/2 transform -translate-y-1/2 left-0 md:left-12 w-full max-w-md rounded-xl shadow-xl z-20"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-white text-xl font-semibold mb-2">Our Special</h3>
-            <p className="text-white text-lg">Service</p>
-          </motion.div>
-          
-          {/* Carte "Comfortable" */}
-          <motion.div 
-            className="absolute top-32 left-0 md:left-24 w-72 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-xl z-10"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
-              <span className="text-green-400 text-xl">📢</span>
-            </div>
-            <h3 className="text-white text-xl font-semibold mb-3">Comfortable</h3>
-            <p className="text-gray-400 text-sm">
-              Facebook Ads, Google Ads,<br />
-              LinkedIn Ads,
-            </p>
-          </motion.div>
-          
-          {/* Carte "Luxury" */}
-          <motion.div 
-            className="absolute top-32 right-0 md:right-12 w-72 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-xl"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
-              <span className="text-blue-400 text-xl">🏆</span>
-            </div>
-            <h3 className="text-white text-xl font-semibold mb-3">Luxury</h3>
-            <p className="text-gray-400 text-sm">
-              Instagram,<br />
-              Instagram,
-            </p>
-          </motion.div>
-          
-          {/* Carte de propriété avec carousel */}
-          <motion.div 
-            className="absolute bottom-24 left-0 w-80 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl overflow-hidden shadow-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={0}
-              slidesPerView={1}
-              navigation
-              pagination={{ clickable: true }}
-              autoplay={{ delay: 4000 }}
-              className="w-full"
+                modules={[Navigation, Pagination, Autoplay]}
+                centeredSlides           
+                loop                     
+                spaceBetween={24}
+                grabCursor               
+                slidesPerView={1}      // modifié pour commencer avec 1 carte visible sur mobile
+                autoplay={{ delay: 4500, disableOnInteraction: false }}
+                navigation
+                pagination={{ clickable: true }}
+                effect="coverflow"
+                coverflowEffect={{
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 220,            
+                    modifier: 1,
+                    slideShadows: false,
+                }}
+                breakpoints={{           
+                    640:  { slidesPerView: 1.5 },
+                    768:  { slidesPerView: 2 },    // ajusté pour afficher 2 cartes sur tablette
+                    1024: { slidesPerView: 3 },    // ajusté pour afficher exactement 3 cartes sur desktop
+                    1280: { slidesPerView: 3 },    // maintient 3 cartes sur grands écrans
+                }}
             >
-              <SwiperSlide>
-                <img src={PropertyImage} alt="Property" className="w-full h-40 object-cover" />
+
+              <SwiperSlide className="swiper-slide-active">
+                <div className="bg-gradient-to-br from-red-400 to-pink-500 rounded-xl p-6 transition-all duration-300">
+                  <h3 className="text-white text-xl font-semibold mb-2">Our Special</h3>
+                  <p className="text-white text-lg">Service</p>
+                </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={PropertyImage} alt="Property" className="w-full h-40 object-cover" />
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 transition-all duration-300">
+                  <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
+                    <span className="text-green-400 text-xl">📢</span>
+                  </div>
+                  <h3 className="text-white text-xl font-semibold mb-3">Comfortable</h3>
+                  <p className="text-gray-400 text-sm">
+                    Facebook Ads, Google Ads,<br />
+                    LinkedIn Ads,
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 transition-all duration-300">
+                  <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
+                    <span className="text-blue-400 text-xl">🏆</span>
+                  </div>
+                  <h3 className="text-white text-xl font-semibold mb-3">Luxury</h3>
+                  <p className="text-gray-400 text-sm">
+                    Instagram,<br />
+                    Instagram,
+                  </p>
+                </div>
               </SwiperSlide>
             </Swiper>
-            
-            <div className="p-4">
-              <div className="flex items-center text-gray-300 text-sm mb-2">
-                <span className="mr-1">📍</span>
-                <span>Jakarta Barat, Indonesia</span>
-              </div>
-              
-              <div className="flex justify-between mb-3">
-                <div className="flex items-center text-gray-300 text-sm">
-                  <span className="mr-1">🛏️</span>
-                  <span>4 bed</span>
-                </div>
-                <div className="flex items-center text-gray-300 text-sm">
-                  <span className="mr-1">📏</span>
-                  <span>10x10 m</span>
-                </div>
-              </div>
-              
-              <div className="flex justify-between items-center">
-                <div className="text-white font-semibold">$5,200,000</div>
-                <button className="bg-green-500 text-xs text-white px-3 py-1 rounded-md">Book Now</button>
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Logos des partenaires */}
-          <motion.div 
-            className="absolute bottom-0 right-0 w-full md:w-80 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1 }}
-          >
-            <div className="grid grid-cols-4 gap-4">
-              <img src={AirbnbLogo} alt="Airbnb" className="h-8 object-contain filter brightness-0 invert opacity-70" />
-              <img src={CiscoLogo} alt="Cisco" className="h-8 object-contain filter brightness-0 invert opacity-70" />
-              <img src={EbayLogo} alt="Ebay" className="h-8 object-contain filter brightness-0 invert opacity-70" />
-              <img src={MicrosoftLogo} alt="Microsoft" className="h-8 object-contain filter brightness-0 invert opacity-70" />
-            </div>
           </motion.div>
         </div>
       </div>
+      
+      {/* Conteneur pour les cartes du bas alignées sur toute la largeur */}
+      <motion.div
+        className="relative z-10 container mx-auto px-6 py-8 mt-8 flex flex-wrap gap-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+      >
+        {/* Carte de propriété */}
+        <motion.div 
+          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl overflow-hidden shadow-xl flex flex-row max-w-md"
+        >
+          <img src={PropertyImage} alt="Property" className="w-32 h-full object-cover" />
+          
+          <div className="p-4 flex-1">
+            <div className="flex items-center text-gray-300 text-sm mb-2">
+              <span className="mr-1">📍</span>
+              <span>Jakarta Barat, Indonesia</span>
+            </div>
+            
+            <div className="flex justify-between mb-3">
+              <div className="flex items-center text-gray-300 text-sm">
+                <span className="mr-1">🛏️</span>
+                <span>4 bed</span>
+              </div>
+              <div className="flex items-center text-gray-300 text-sm">
+                <span className="mr-1">📏</span>
+                <span>10x10 m</span>
+              </div>
+            </div>
+            
+            <div className="flex justify-between items-center">
+              <div className="text-white font-semibold">$5,200,000</div>
+              <button className="bg-green-500 text-xs text-white px-3 py-1 rounded-md">Book Now</button>
+            </div>
+          </div>
+        </motion.div>
+        
+        {/* Logos des partenaires - Maintenant alignés à droite */}
+        <div className="flex flex-wrap items-center gap-4 ml-auto">
+          <motion.div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-xl flex items-center justify-center h-16 w-32">
+            <img src={AirbnbLogo} alt="Airbnb" className="h-8 object-contain filter brightness-0 invert opacity-70" />
+          </motion.div>
+          
+          <motion.div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-xl flex items-center justify-center h-16 w-32">
+            <img src={CiscoLogo} alt="Cisco" className="h-8 object-contain filter brightness-0 invert opacity-70" />
+          </motion.div>
+          
+          <motion.div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-xl flex items-center justify-center h-16 w-32">
+            <img src={EbayLogo} alt="Ebay" className="h-8 object-contain filter brightness-0 invert opacity-70" />
+          </motion.div>
+          
+          <motion.div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-xl flex items-center justify-center h-16 w-32">
+            <img src={MicrosoftLogo} alt="Microsoft" className="h-8 object-contain filter brightness-0 invert opacity-70" />
+          </motion.div>
+        </div>
+      </motion.div>
       
       {/* Information de contact */}
       <div className="absolute bottom-6 right-6 text-gray-300 text-sm">
