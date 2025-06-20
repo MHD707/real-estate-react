@@ -204,56 +204,83 @@ const HeroSection = () => {
                 modules={[Navigation, Pagination, Autoplay]}
                 centeredSlides           
                 loop                     
-                spaceBetween={24}
+                spaceBetween={30}
                 grabCursor               
-                slidesPerView={1}      // modifié pour commencer avec 1 carte visible sur mobile
-                autoplay={{ delay: 4500, disableOnInteraction: false }}
+                slidesPerView={1}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
                 navigation
-                pagination={{ clickable: true }}
+                pagination={{ clickable: true, dynamicBullets: true }}
                 effect="coverflow"
                 coverflowEffect={{
-                    rotate: 0,
+                    rotate: 5,
                     stretch: 0,
-                    depth: 220,            
-                    modifier: 1,
-                    slideShadows: false,
+                    depth: 100,            
+                    modifier: 2,
+                    slideShadows: true,
                 }}
                 breakpoints={{           
-                    640:  { slidesPerView: 1.5 },
-                    768:  { slidesPerView: 2 },    // ajusté pour afficher 2 cartes sur tablette
-                    1024: { slidesPerView: 3 },    // ajusté pour afficher exactement 3 cartes sur desktop
-                    1280: { slidesPerView: 3 },    // maintient 3 cartes sur grands écrans
+                    640:  { slidesPerView: 1.2 },
+                    768:  { slidesPerView: 1.5 },
+                    1024: { slidesPerView: 2 },
+                    1280: { slidesPerView: 2.5 },
                 }}
+                className="mySwiper"
             >
 
-              <SwiperSlide className="swiper-slide-active">
-                <div className="bg-gradient-to-br from-red-400 to-pink-500 rounded-xl p-6 transition-all duration-300">
-                  <h3 className="text-white text-xl font-semibold mb-2">Our Special</h3>
-                  <p className="text-white text-lg">Service</p>
+              <SwiperSlide>
+                <div className="bg-gradient-to-br from-red-400 to-pink-500 rounded-xl p-8 transition-all duration-300 hover:scale-105 h-64 flex flex-col justify-between">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                    <span className="text-white text-2xl">✨</span>
+                  </div>
+                  <div>
+                    <h3 className="text-white text-2xl font-semibold mb-2">Notre Spécialité</h3>
+                    <p className="text-white/90 text-lg">Service Premium</p>
+                  </div>
                 </div>
               </SwiperSlide>
+              
               <SwiperSlide>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 transition-all duration-300">
-                  <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
-                    <span className="text-green-400 text-xl">📢</span>
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 transition-all duration-300 hover:scale-105 h-64 flex flex-col justify-between">
+                  <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
+                    <span className="text-green-400 text-2xl">📢</span>
                   </div>
-                  <h3 className="text-white text-xl font-semibold mb-3">Comfortable</h3>
-                  <p className="text-gray-400 text-sm">
-                    Facebook Ads, Google Ads,<br />
-                    LinkedIn Ads,
-                  </p>
+                  <div>
+                    <h3 className="text-white text-2xl font-semibold mb-3">Confortable</h3>
+                    <p className="text-gray-300 text-base">
+                      Propriétés modernes avec<br />
+                      tout le confort nécessaire
+                    </p>
+                  </div>
                 </div>
               </SwiperSlide>
+              
               <SwiperSlide>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 transition-all duration-300">
-                  <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
-                    <span className="text-blue-400 text-xl">🏆</span>
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 transition-all duration-300 hover:scale-105 h-64 flex flex-col justify-between">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
+                    <span className="text-blue-400 text-2xl">🏆</span>
                   </div>
-                  <h3 className="text-white text-xl font-semibold mb-3">Luxury</h3>
-                  <p className="text-gray-400 text-sm">
-                    Instagram,<br />
-                    Instagram,
-                  </p>
+                  <div>
+                    <h3 className="text-white text-2xl font-semibold mb-3">Luxe</h3>
+                    <p className="text-gray-300 text-base">
+                      Propriétés exclusives<br />
+                      de haute gamme
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              
+              <SwiperSlide>
+                <div className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl p-8 transition-all duration-300 hover:scale-105 h-64 flex flex-col justify-between">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                    <span className="text-white text-2xl">🏡</span>
+                  </div>
+                  <div>
+                    <h3 className="text-white text-2xl font-semibold mb-3">Investissement</h3>
+                    <p className="text-white/90 text-base">
+                      Opportunités immobilières<br />
+                      à fort potentiel
+                    </p>
+                  </div>
                 </div>
               </SwiperSlide>
             </Swiper>
