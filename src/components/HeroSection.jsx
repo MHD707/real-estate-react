@@ -282,7 +282,7 @@ const HeroSection = () => {
       
       {/* Conteneur pour les cartes du bas alignées sur toute la largeur */}
       <motion.div
-        className="relative z-10 container mx-auto px-6 py-8 mt-8 md:mt-8 flex flex-col md:flex-row flex-wrap gap-4 pt-[300px] md:pt-8"
+        className="relative z-10 container mx-auto px-6 py-8 mt-8 md:mt-8 flex flex-col md:flex-row flex-wrap gap-4 pt-[230px] md:pt-8"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
@@ -340,7 +340,7 @@ const HeroSection = () => {
       </motion.div>
       
       {/* Information de contact */}
-      <div className="absolute bottom-6 right-6 text-gray-300 text-sm">
+      <div className="relative md:absolute md:bottom-6 md:right-6 mt-8 px-6 md:px-0 md:mt-0 text-gray-300 text-sm">
         <p>Give us a Call 1-888-498-9240 and we'll set you up, or <span className="text-green-400 underline">check our pricing</span></p>
       </div>
     </div>
