@@ -282,7 +282,7 @@ const HeroSection = () => {
       
       {/* Conteneur pour les cartes du bas alignées sur toute la largeur */}
       <motion.div
-        className="relative z-10 container mx-auto px-6 py-8 mt-8 flex flex-wrap gap-4"
+        className="relative z-10 container mx-auto px-6 py-8 mt-8 md:mt-8 flex flex-col md:flex-row flex-wrap gap-4 pt-[300px] md:pt-8"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
@@ -291,7 +291,9 @@ const HeroSection = () => {
         <motion.div 
           className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl overflow-hidden shadow-xl flex flex-row max-w-md"
         >
-          <img src={PropertyImage} alt="Property" className="w-32 h-full object-cover rounded-xl" />
+          <div className="flex items-center justify-center">
+            <img src={PropertyImage} alt="Property" className="w-32 h-32 object-cover rounded-xl" />
+          </div>
           
           <div className="p-4 flex-1">
             <div className="flex items-center text-gray-300 text-sm mb-2">
