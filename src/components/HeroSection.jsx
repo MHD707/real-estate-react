@@ -272,7 +272,7 @@ const HeroSection = () => {
         <motion.div 
           className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl overflow-hidden shadow-xl flex flex-row max-w-md"
         >
-          <img src={PropertyImage} alt="Property" className="w-32 h-full object-cover" />
+          <img src={PropertyImage} alt="Property" className="w-32 h-full object-cover rounded-xl" />
           
           <div className="p-4 flex-1">
             <div className="flex items-center text-gray-300 text-sm mb-2">
