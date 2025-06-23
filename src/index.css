@@ -29,3 +29,33 @@
 .swiper-slide-shadow {
   display: none;
 }
+
+/* Styles pour Embla Carousel */
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  will-change: transform;
+}
+
+.embla__slide {
+  flex: 0 0 80%;
+  min-width: 0;
+  position: relative;
+  padding-left: 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Animation subtile pour améliorer la fluidité visuelle */
+@keyframes smoothScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-5px); }
+}
+
+.embla:hover .embla__container {
+  animation: smoothScroll 0.8s infinite alternate;
+  animation-play-state: paused;
+}
