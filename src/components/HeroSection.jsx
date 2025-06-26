@@ -50,7 +50,7 @@ const BackgroundEffects = () => (
   <div className="absolute inset-0">
     {/* Orbes gradients flottants */}
     <motion.div 
-      className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-500/20 blur-3xl"
+      className="absolute top-1/4 left-2/3 w-64 h-64 rounded-full bg-[#39FF14]/20 blur-3xl"
       animate={{ 
         x: [0, 30, 0], 
         y: [0, -30, 0],
@@ -63,7 +63,7 @@ const BackgroundEffects = () => (
       }}
     />
     <motion.div 
-      className="absolute bottom-1/3 right-1/3 w-80 h-80 rounded-full bg-pink-500/10 blur-3xl"
+      className="absolute bottom-1/3 right-[10%] w-80 h-80 rounded-full bg-[#39FF14]/20 blur-3xl"
       animate={{ 
         x: [0, -40, 0], 
         y: [0, 40, 0],
@@ -76,7 +76,7 @@ const BackgroundEffects = () => (
       }}
     />
     <motion.div 
-      className="absolute top-1/2 right-1/4 w-72 h-72 rounded-full bg-blue-500/15 blur-3xl"
+      className="absolute top-1/2 right-[5%] w-72 h-72 rounded-full bg-[#39FF14]/20 blur-3xl"
       animate={{ 
         x: [0, 50, 0], 
         y: [0, 20, 0],
@@ -97,7 +97,7 @@ const BackgroundEffects = () => (
 const NavigationBar = () => (
   <nav className="relative z-10 px-6 py-3 flex items-center justify-between">
     <div className="flex items-center">
-      <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+      <div className="w-10 h-10 bg-gradient-to-r from-emerald-400 to-lime-400 rounded-lg flex items-center justify-center">
         <span className="text-white font-bold text-lg">My</span>
       </div>
       <span className="text-white font-medium ml-2">Estate</span>
@@ -111,7 +111,7 @@ const NavigationBar = () => (
       <button className="text-white px-3 py-1.5 rounded-lg hover:bg-white/5 transition-all text-sm">
         Log In
       </button>
-      <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-lg hover:bg-white/20 transition-all text-sm">
+      <button className="bg-white/10 backdrop-blur-md border border-[#39FF14]/20 text-white px-4 py-1.5 rounded-lg hover:bg-[#39FF14]/20 transition-all text-sm">
         Sign Up
       </button>
     </div>
@@ -119,7 +119,7 @@ const NavigationBar = () => (
 );
 
 const SearchForm = ({ propertyType, setPropertyType, priceRange, setPriceRange }) => (
-  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-2 shadow-lg">
+  <div className="bg-white/10 backdrop-blur-md border border-[#39FF14]/20 rounded-xl p-2 shadow-lg">
     <div className="grid md:grid-cols-3 gap-2">
       <div className="col-span-1">
         <label className="text-gray-300 text-sm block mb-2">Property type</label>
@@ -127,7 +127,7 @@ const SearchForm = ({ propertyType, setPropertyType, priceRange, setPriceRange }
           <select 
             value={propertyType}
             onChange={(e) => setPropertyType(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white appearance-none focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white appearance-none focus:outline-none focus:ring-2 focus:ring-[#39FF14]"
           >
             <option>Show all</option>
             <option>Houses</option>
@@ -146,7 +146,7 @@ const SearchForm = ({ propertyType, setPropertyType, priceRange, setPriceRange }
           <select 
             value={priceRange}
             onChange={(e) => setPriceRange(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white appearance-none focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white appearance-none focus:outline-none focus:ring-2 focus:ring-[#39FF14]"
           >
             <option>Any price</option>
             <option>$100k - $200k</option>
@@ -162,7 +162,7 @@ const SearchForm = ({ propertyType, setPropertyType, priceRange, setPriceRange }
       
       <div className="col-span-1">
         <label className="text-transparent text-sm block mb-2">Search</label>
-        <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg px-4 py-3 text-white font-medium hover:opacity-90 transition-opacity">
+        <button className="w-full bg-gradient-to-r from-emerald-400 to-lime-400 rounded-lg px-4 py-3 text-white font-medium hover:opacity-90 transition-opacity">
           Search
         </button>
       </div>
@@ -172,7 +172,7 @@ const SearchForm = ({ propertyType, setPropertyType, priceRange, setPriceRange }
 
 const PropertyCard = () => (
   <motion.div 
-    className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg overflow-hidden shadow-md flex flex-row max-w-xs"
+    className="bg-white/10 backdrop-blur-md border border-[#39FF14]/20 rounded-lg overflow-hidden shadow-md flex flex-row max-w-xs"
   >
     <div className="flex items-center justify-center">
       <img src={PropertyImage} alt="Property" className="w-20 h-20 object-cover rounded-lg" />
@@ -197,7 +197,7 @@ const PropertyCard = () => (
       
       <div className="flex justify-between items-center">
         <div className="text-white font-semibold text-xs">$5,200,000</div>
-        <button className="bg-green-500 text-xs text-white px-2 py-0.5 rounded-md">Book Now</button>
+        <button className="bg-[#39FF14] text-xs text-white px-2 py-0.5 rounded-md">Book Now</button>
       </div>
     </div>
   </motion.div>
@@ -205,19 +205,19 @@ const PropertyCard = () => (
 
 const PartnerLogos = () => (
   <div className="flex flex-wrap items-center justify-between w-full gap-3">
-    <motion.div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-3 shadow-md flex items-center justify-center h-16 w-32">
+    <motion.div className="bg-white/10 backdrop-blur-md border border-[#39FF14]/20 rounded-lg p-3 shadow-md flex items-center justify-center h-16 w-32">
       <img src={AirbnbLogo} alt="Airbnb" className="h-8 object-contain filter brightness-0 invert opacity-70" />
     </motion.div>
     
-    <motion.div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-3 shadow-md flex items-center justify-center h-16 w-32">
+    <motion.div className="bg-white/10 backdrop-blur-md border border-[#39FF14]/20 rounded-lg p-3 shadow-md flex items-center justify-center h-16 w-32">
       <img src={CiscoLogo} alt="Cisco" className="h-8 object-contain filter brightness-0 invert opacity-70" />
     </motion.div>
     
-    <motion.div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-3 shadow-md flex items-center justify-center h-16 w-32">
+    <motion.div className="bg-white/10 backdrop-blur-md border border-[#39FF14]/20 rounded-lg p-3 shadow-md flex items-center justify-center h-16 w-32">
       <img src={EbayLogo} alt="Ebay" className="h-8 object-contain filter brightness-0 invert opacity-70" />
     </motion.div>
     
-    <motion.div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-3 shadow-md flex items-center justify-center h-16 w-32">
+    <motion.div className="bg-white/10 backdrop-blur-md border border-[#39FF14]/20 rounded-lg p-3 shadow-md flex items-center justify-center h-16 w-32">
       <img src={MicrosoftLogo} alt="Microsoft" className="h-8 object-contain filter brightness-0 invert opacity-70" />
     </motion.div>
   </div>
@@ -346,7 +346,7 @@ const HeroSection = () => {
   // Données du carrousel
   const propertySlides = [1, 2, 3, 4, 5].map((index) => (
     <div className="embla__slide flex-[0_0_100%] min-w-0 relative mr-4" key={index}>
-      <div className="embla__slide__inner h-[250px] bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-lg flex items-center justify-center p-6">
+      <div className="embla__slide__inner h-[250px] bg-gradient-to-br from-[#39FF14]/30 to-[#39FF14]/30 rounded-lg flex items-center justify-center p-6">
         <div className="text-center">
           <h3 className="text-white text-xl font-bold mb-2">Propriété {index}</h3>
           <p className="text-white/80 mb-3 text-sm">Une description captivante de cette magnifique propriété</p>
@@ -358,7 +358,7 @@ const HeroSection = () => {
               2 salles de bain
             </div>
           </div>
-          <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-lg hover:bg-white/20 transition-all text-sm">
+          <button className="bg-white/10 backdrop-blur-md border border-[#39FF14]/20 text-white px-4 py-1.5 rounded-lg hover:bg-[#39FF14]/20 transition-all text-sm">
             Voir détails
           </button>
         </div>
@@ -367,7 +367,7 @@ const HeroSection = () => {
   ));
 
   return (
-    <div className="relative h-screen w-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden flex flex-col">
+    <div className="relative h-screen w-full bg-[#000] overflow-hidden flex flex-col">
       {/* Effets d'arrière-plan */}
       <BackgroundEffects />
 
@@ -384,15 +384,15 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
         >
           {/* Logo/icône */}
-          <div className="w-28 h-8 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center mb-1">
+          <div className="w-28 h-8 bg-gradient-to-r from-emerald-400 to-lime-400 rounded-lg flex items-center justify-center mb-1">
             <div className="w-6 h-6 bg-white rounded-full"></div>
           </div>
           
           {/* Titre principal */}
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-            Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Your</span>
+            Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-lime-400">Your</span>
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">Best Happy Land</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-lime-400">Best Happy Land</span>
           </h1>
           
           {/* Sous-titre */}
@@ -410,16 +410,16 @@ const HeroSection = () => {
           
           {/* Boutons d'action */}
           <div className="flex flex-wrap gap-2">
-            <button className="flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 text-white hover:bg-white/20 transition-all text-sm">
+            <button className="flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-[#39FF14]/20 rounded-full px-4 py-2 text-white hover:bg-[#39FF14]/20 transition-all text-sm">
               <span>Buy a home</span>
-              <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+              <div className="w-5 h-5 rounded-full bg-[#39FF14]/20 flex items-center justify-center">
                 <FaArrowRight className="text-white text-xs" />
               </div>
             </button>
             
-            <button className="flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 text-white hover:bg-white/20 transition-all text-sm">
+            <button className="flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-[#39FF14]/20 rounded-full px-4 py-2 text-white hover:bg-[#39FF14]/20 transition-all text-sm">
               <span>Rent a home</span>
-              <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+              <div className="w-5 h-5 rounded-full bg-[#39FF14]/20 flex items-center justify-center">
                 <FaArrowRight className="text-white text-xs" />
               </div>
             </button>
@@ -433,7 +433,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="embla overflow-hidden rounded-xl bg-white/10 backdrop-blur-md border border-white/20 p-3 max-w-sm mx-auto">
+          <div className="embla overflow-hidden rounded-xl bg-white/10 backdrop-blur-md border border-[#39FF14]/20 p-3 max-w-sm mx-auto">
             <div className="embla__viewport" ref={emblaRef}>
               <div className="embla__container flex">
                 {propertySlides}
